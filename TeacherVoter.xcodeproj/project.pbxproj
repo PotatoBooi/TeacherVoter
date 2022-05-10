@@ -14,6 +14,16 @@
 		2B7CF322281FF755000EB344 /* TeacherVoter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CF320281FF755000EB344 /* TeacherVoter.xcdatamodeld */; };
 		2B7CF324281FF758000EB344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF323281FF758000EB344 /* Assets.xcassets */; };
 		2B7CF327281FF758000EB344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CF325281FF758000EB344 /* LaunchScreen.storyboard */; };
+		2B7CF331282008B4000EB344 /* AddTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CF330282008B4000EB344 /* AddTeacherViewController.swift */; };
+		2B7CF333282010B4000EB344 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CF332282010B4000EB344 /* TeacherCell.swift */; };
+		2B913EF12820199400C94D2A /* TeacherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913EF02820199400C94D2A /* TeacherDetailsViewController.swift */; };
+		2B913EF8282021F600C94D2A /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913EF5282021F600C94D2A /* StarRatingView.swift */; };
+		2B913EF9282021F600C94D2A /* StarRatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913EF6282021F600C94D2A /* StarRatingStackView.swift */; };
+		2B913EFA282021F600C94D2A /* StarRatingStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B913EF7282021F600C94D2A /* StarRatingStackView.xib */; };
+		2B913EFC2820494A00C94D2A /* VoteOnTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913EFB2820494A00C94D2A /* VoteOnTeacherViewController.swift */; };
+		2B913EFF28204CDA00C94D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913EFE28204CDA00C94D2A /* Extensions.swift */; };
+		2B913F012820604C00C94D2A /* TeacherDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913F002820604C00C94D2A /* TeacherDetailsHeaderCell.swift */; };
+		2B913F032820656900C94D2A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B913F022820656900C94D2A /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		2B7CF323281FF758000EB344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B7CF326281FF758000EB344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B7CF328281FF758000EB344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B7CF330282008B4000EB344 /* AddTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherViewController.swift; sourceTree = "<group>"; };
+		2B7CF332282010B4000EB344 /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		2B913EF02820199400C94D2A /* TeacherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsViewController.swift; sourceTree = "<group>"; };
+		2B913EF5282021F600C94D2A /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		2B913EF6282021F600C94D2A /* StarRatingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingStackView.swift; sourceTree = "<group>"; };
+		2B913EF7282021F600C94D2A /* StarRatingStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingStackView.xib; sourceTree = "<group>"; };
+		2B913EFB2820494A00C94D2A /* VoteOnTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteOnTeacherViewController.swift; sourceTree = "<group>"; };
+		2B913EFE28204CDA00C94D2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2B913F002820604C00C94D2A /* TeacherDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailsHeaderCell.swift; sourceTree = "<group>"; };
+		2B913F022820656900C94D2A /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,9 @@
 		2B7CF316281FF755000EB344 /* TeacherVoter */ = {
 			isa = PBXGroup;
 			children = (
+				2B913EFD28204CCF00C94D2A /* Utils */,
+				2B913EF2282021B100C94D2A /* Views */,
+				2B7CF32F282002AA000EB344 /* Screens */,
 				2B7CF317281FF755000EB344 /* AppDelegate.swift */,
 				2B7CF319281FF755000EB344 /* SceneDelegate.swift */,
 				2B7CF31B281FF755000EB344 /* ViewController.swift */,
@@ -68,6 +91,37 @@
 				2B7CF320281FF755000EB344 /* TeacherVoter.xcdatamodeld */,
 			);
 			path = TeacherVoter;
+			sourceTree = "<group>";
+		};
+		2B7CF32F282002AA000EB344 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2B7CF330282008B4000EB344 /* AddTeacherViewController.swift */,
+				2B7CF332282010B4000EB344 /* TeacherCell.swift */,
+				2B913EF02820199400C94D2A /* TeacherDetailsViewController.swift */,
+				2B913EFB2820494A00C94D2A /* VoteOnTeacherViewController.swift */,
+				2B913F002820604C00C94D2A /* TeacherDetailsHeaderCell.swift */,
+				2B913F022820656900C94D2A /* CommentCell.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2B913EF2282021B100C94D2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B913EF6282021F600C94D2A /* StarRatingStackView.swift */,
+				2B913EF7282021F600C94D2A /* StarRatingStackView.xib */,
+				2B913EF5282021F600C94D2A /* StarRatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B913EFD28204CCF00C94D2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B913EFE28204CDA00C94D2A /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B913EFA282021F600C94D2A /* StarRatingStackView.xib in Resources */,
 				2B7CF327281FF758000EB344 /* LaunchScreen.storyboard in Resources */,
 				2B7CF324281FF758000EB344 /* Assets.xcassets in Resources */,
 				2B7CF31F281FF755000EB344 /* Main.storyboard in Resources */,
@@ -141,10 +196,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B913F032820656900C94D2A /* CommentCell.swift in Sources */,
+				2B913F012820604C00C94D2A /* TeacherDetailsHeaderCell.swift in Sources */,
 				2B7CF31C281FF755000EB344 /* ViewController.swift in Sources */,
+				2B913EF9282021F600C94D2A /* StarRatingStackView.swift in Sources */,
+				2B913EF8282021F600C94D2A /* StarRatingView.swift in Sources */,
+				2B7CF331282008B4000EB344 /* AddTeacherViewController.swift in Sources */,
 				2B7CF322281FF755000EB344 /* TeacherVoter.xcdatamodeld in Sources */,
 				2B7CF318281FF755000EB344 /* AppDelegate.swift in Sources */,
+				2B913EFC2820494A00C94D2A /* VoteOnTeacherViewController.swift in Sources */,
+				2B7CF333282010B4000EB344 /* TeacherCell.swift in Sources */,
 				2B7CF31A281FF755000EB344 /* SceneDelegate.swift in Sources */,
+				2B913EFF28204CDA00C94D2A /* Extensions.swift in Sources */,
+				2B913EF12820199400C94D2A /* TeacherDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

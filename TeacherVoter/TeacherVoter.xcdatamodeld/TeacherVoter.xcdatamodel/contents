@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES" codeGenerationType="class">
+        <attribute name="avgChill" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgDifficulty" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgHumor" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgLoudness" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgMerits" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="avgRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="courses" attributeType="String"/>
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="lastName" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <relationship name="votes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Vote" inverseName="teacher" inverseEntity="Vote"/>
+    </entity>
+    <entity name="Vote" representedClassName="Vote" syncable="YES" codeGenerationType="class">
+        <attribute name="chill" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" maxValueString="300"/>
+        <attribute name="humor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="merits" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="overall" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="taskDifficulty" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="voiceLoundness" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="teacher" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="votes" inverseEntity="Teacher"/>
+    </entity>
+    <elements>
+        <element name="Teacher" positionX="-305.7979736328125" positionY="-211.7540893554688" width="199.791015625" height="193"/>
+        <element name="Vote" positionX="-54" positionY="18" width="128" height="163"/>
+    </elements>
 </model>

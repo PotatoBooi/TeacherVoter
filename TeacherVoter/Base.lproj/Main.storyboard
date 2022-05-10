@@ -1,24 +1,680 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lzo-kR-VpA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Teachers-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Nauczyciele" id="BYZ-38-t0r" userLabel="Teachers" customClass="ViewController" customModule="TeacherVoter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bgx-Wk-QuJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherCell" id="oXO-Dy-nly" customClass="TeacherCell" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="98.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oXO-Dy-nly" id="5qh-jo-5pL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-Mr-iii">
+                                                    <rect key="frame" x="16" y="16" width="382" height="66.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GNg-1B-eKs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="66.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imie i nazwisko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVY-At-N99">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="25.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Przedmiot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-wc-8q4">
+                                                                    <rect key="frame" x="0.0" y="41.5" width="78" height="25"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MWy-sC-Jbr" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                            <rect key="frame" x="203" y="0.0" width="179" height="66.5"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                    <integer key="value" value="0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HMU-Mr-iii" firstAttribute="leading" secondItem="5qh-jo-5pL" secondAttribute="leading" constant="16" id="6Ng-8Q-mPT"/>
+                                                <constraint firstAttribute="trailing" secondItem="HMU-Mr-iii" secondAttribute="trailing" constant="16" id="8xd-lh-Zmy"/>
+                                                <constraint firstAttribute="bottom" secondItem="HMU-Mr-iii" secondAttribute="bottom" constant="16" id="HhZ-wx-Wy2"/>
+                                                <constraint firstItem="HMU-Mr-iii" firstAttribute="top" secondItem="5qh-jo-5pL" secondAttribute="top" constant="16" id="lZJ-TV-RhD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseLabel" destination="BdO-wc-8q4" id="aHU-cQ-LJM"/>
+                                            <outlet property="nameLabel" destination="vVY-At-N99" id="Ekl-P4-JXl"/>
+                                            <outlet property="teacherAvgRating" destination="MWy-sC-Jbr" id="noQ-rg-NnB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bgx-Wk-QuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="25i-Uk-MlV"/>
+                            <constraint firstItem="Bgx-Wk-QuJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jcn-r2-oRr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bgx-Wk-QuJ" secondAttribute="trailing" id="cbD-8w-ewY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bgx-Wk-QuJ" secondAttribute="bottom" id="vbp-t5-uCv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UY7-r9-bdb"/>
+                    <connections>
+                        <outlet property="teachersTableView" destination="Bgx-Wk-QuJ" id="GKn-Bj-BMV"/>
+                        <segue destination="pRC-eV-CTH" kind="show" identifier="addTeacher" id="isg-qR-uLK"/>
+                        <segue destination="80r-61-TD6" kind="show" identifier="teacherDetails" id="Xeq-zM-oux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="480" y="82"/>
+        </scene>
+        <!--AddTeacher-->
+        <scene sceneID="SpZ-SR-xub">
+            <objects>
+                <viewController title="Dodaj nauczyciela" id="pRC-eV-CTH" userLabel="AddTeacher" customClass="AddTeacherViewController" customModule="TeacherVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zvf-4d-WRc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Imię" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-mk-0lu">
+                                <rect key="frame" x="32" y="104" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwisko" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcC-wL-ieQ">
+                                <rect key="frame" x="32" y="170" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Przedmiot 1, Przedmiot 2, Przedmiot 3..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2x9-BY-EAN">
+                                <rect key="frame" x="32" y="236" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0Y-vb-1le">
+                                <rect key="frame" x="168.5" y="310" width="77.5" height="47"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Dodaj" buttonSize="large"/>
+                                <connections>
+                                    <action selector="addTeacherPressed:" destination="pRC-eV-CTH" eventType="touchUpInside" id="Niu-2r-fTO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Y6-uh-EpX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Y6-uh-EpX" firstAttribute="trailing" secondItem="hcC-wL-ieQ" secondAttribute="trailing" constant="32" id="Exh-Wg-kYr"/>
+                            <constraint firstItem="2x9-BY-EAN" firstAttribute="top" secondItem="hcC-wL-ieQ" secondAttribute="bottom" constant="32" id="QGh-sJ-Vmt"/>
+                            <constraint firstItem="I2P-mk-0lu" firstAttribute="top" secondItem="2Y6-uh-EpX" secondAttribute="top" constant="16" id="QNu-yr-Iic"/>
+                            <constraint firstItem="hcC-wL-ieQ" firstAttribute="leading" secondItem="2Y6-uh-EpX" secondAttribute="leading" constant="32" id="Wcl-Wc-iXW"/>
+                            <constraint firstItem="2Y6-uh-EpX" firstAttribute="trailing" secondItem="I2P-mk-0lu" secondAttribute="trailing" constant="32" id="Xly-qv-30V"/>
+                            <constraint firstItem="a0Y-vb-1le" firstAttribute="top" secondItem="2x9-BY-EAN" secondAttribute="bottom" constant="40" id="a8U-41-vDY"/>
+                            <constraint firstItem="I2P-mk-0lu" firstAttribute="leading" secondItem="2Y6-uh-EpX" secondAttribute="leading" constant="32" id="ajA-Df-IKr"/>
+                            <constraint firstItem="2x9-BY-EAN" firstAttribute="leading" secondItem="2Y6-uh-EpX" secondAttribute="leading" constant="32" id="dzn-Wr-Qhs"/>
+                            <constraint firstItem="2Y6-uh-EpX" firstAttribute="trailing" secondItem="2x9-BY-EAN" secondAttribute="trailing" constant="32" id="htl-R2-8BB"/>
+                            <constraint firstItem="a0Y-vb-1le" firstAttribute="centerX" secondItem="Zvf-4d-WRc" secondAttribute="centerX" id="pYs-Ru-nfb"/>
+                            <constraint firstItem="hcC-wL-ieQ" firstAttribute="top" secondItem="I2P-mk-0lu" secondAttribute="bottom" constant="32" id="zpr-4Q-xAv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rAh-eU-OeH"/>
+                    <connections>
+                        <outlet property="coursesField" destination="2x9-BY-EAN" id="3E4-4X-RWD"/>
+                        <outlet property="nameField" destination="I2P-mk-0lu" id="fef-X5-yjp"/>
+                        <outlet property="surnameField" destination="hcC-wL-ieQ" id="bl7-gI-KV7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trS-sv-Orj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229" y="82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n5u-p4-kJd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lzo-kR-VpA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rrB-Eg-3AU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dBB-o8-4Vr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgp-fZ-HbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-275.36231884057975" y="81.696428571428569"/>
+        </scene>
+        <!--Teacher Details View Controller-->
+        <scene sceneID="jjY-ou-1m5">
+            <objects>
+                <viewController id="80r-61-TD6" customClass="TeacherDetailsViewController" customModule="TeacherVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aXa-Mz-uXv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-AV-V9A">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailsHeader" id="2wd-1O-Kea" customClass="TeacherDetailsHeaderCell" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="466.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wd-1O-Kea" id="SkY-Hh-OEH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="466.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imie Nazwisko" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-Iv-eQM">
+                                                    <rect key="frame" x="32" y="16" width="350" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="kOL-kE-DYk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27X-Pr-x3N">
+                                                    <rect key="frame" x="186.5" y="62" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-gY-Fac">
+                                                    <rect key="frame" x="0.0" y="82.5" width="414" height="384"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AOc-ia-9ik" userLabel="Average">
+                                                            <rect key="frame" x="20" y="320" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Ogólna ocena" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-0l-j8Z">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTy-U9-wtE" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="qlF-k6-jNv"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bUz-R4-9kd" userLabel="Humor">
+                                                            <rect key="frame" x="20" y="256" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Poczucie humoru" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-mB-dJ3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOJ-42-95M" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="cJ9-GW-4OD"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TMo-34-1Mz" userLabel="Difficulty">
+                                                            <rect key="frame" x="20" y="192" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Poziom trudności zadania" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2t-CX-qxR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-cL-5hl" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="-1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="Oxj-YO-hkp"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zpX-f0-RuJ" userLabel="Chill">
+                                                            <rect key="frame" x="20" y="128" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Wyluzowanie" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-YN-ieB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MMI-Ax-xcO" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="mbw-eL-53A"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cQZ-cE-YI2" userLabel="Loudness">
+                                                            <rect key="frame" x="20" y="64" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Donośność głosu" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaS-Re-Zmu">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rr8-lS-cY3" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="p9v-K3-D1u"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zcx-al-lti" userLabel="Metrits">
+                                                            <rect key="frame" x="20" y="0.0" width="374" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Merytoryka prowadzenia zajęć" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NH-I0-RZx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="64"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lyA-uz-ME2" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                                                    <rect key="frame" x="195" y="0.0" width="179" height="64"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="64" id="IJ9-5k-ep1"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="AOc-ia-9ik" firstAttribute="top" secondItem="bUz-R4-9kd" secondAttribute="bottom" id="3pE-vC-eZY"/>
+                                                        <constraint firstItem="zcx-al-lti" firstAttribute="top" secondItem="iR3-gY-Fac" secondAttribute="top" id="9fZ-2G-lhv"/>
+                                                        <constraint firstItem="AOc-ia-9ik" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="Ckp-c6-FqH"/>
+                                                        <constraint firstItem="bUz-R4-9kd" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="GuB-H7-bQd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="AOc-ia-9ik" secondAttribute="bottom" id="JA7-zp-zfo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TMo-34-1Mz" secondAttribute="trailing" constant="20" id="SYz-Jb-UMJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AOc-ia-9ik" secondAttribute="trailing" constant="20" id="dCw-5u-0mI"/>
+                                                        <constraint firstItem="bUz-R4-9kd" firstAttribute="top" secondItem="TMo-34-1Mz" secondAttribute="bottom" id="dNe-wM-tVS"/>
+                                                        <constraint firstItem="zpX-f0-RuJ" firstAttribute="top" secondItem="cQZ-cE-YI2" secondAttribute="bottom" id="fw7-sM-EEf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zcx-al-lti" secondAttribute="trailing" constant="20" id="htX-XN-tVk"/>
+                                                        <constraint firstItem="TMo-34-1Mz" firstAttribute="top" secondItem="zpX-f0-RuJ" secondAttribute="bottom" id="jku-SR-fRC"/>
+                                                        <constraint firstItem="TMo-34-1Mz" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="jku-oT-Y9l"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cQZ-cE-YI2" secondAttribute="trailing" constant="20" id="k4q-hx-nXW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bUz-R4-9kd" secondAttribute="trailing" constant="20" id="lpN-WT-rFy"/>
+                                                        <constraint firstItem="zcx-al-lti" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="mu8-Sa-Ya7"/>
+                                                        <constraint firstItem="zpX-f0-RuJ" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="rGo-ck-jdb"/>
+                                                        <constraint firstItem="cQZ-cE-YI2" firstAttribute="top" secondItem="zcx-al-lti" secondAttribute="bottom" id="rhF-i2-6Wj"/>
+                                                        <constraint firstItem="cQZ-cE-YI2" firstAttribute="leading" secondItem="iR3-gY-Fac" secondAttribute="leading" constant="20" id="y5Z-5u-qX3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zpX-f0-RuJ" secondAttribute="trailing" constant="20" id="yLQ-gX-jPM"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="27X-Pr-x3N" firstAttribute="centerX" secondItem="SkY-Hh-OEH" secondAttribute="centerX" id="1Vc-Xg-bKX"/>
+                                                <constraint firstItem="iR3-gY-Fac" firstAttribute="top" secondItem="27X-Pr-x3N" secondAttribute="bottom" id="Gr2-GJ-Lqc"/>
+                                                <constraint firstItem="27X-Pr-x3N" firstAttribute="top" secondItem="kuP-Iv-eQM" secondAttribute="bottom" constant="16" id="NMa-Pf-eUS"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kuP-Iv-eQM" secondAttribute="trailing" constant="32" id="Ngq-E1-WYC"/>
+                                                <constraint firstAttribute="trailing" secondItem="iR3-gY-Fac" secondAttribute="trailing" id="cSj-yu-cqV"/>
+                                                <constraint firstItem="kuP-Iv-eQM" firstAttribute="centerX" secondItem="SkY-Hh-OEH" secondAttribute="centerX" id="mDK-qA-JJk"/>
+                                                <constraint firstItem="kuP-Iv-eQM" firstAttribute="leading" secondItem="SkY-Hh-OEH" secondAttribute="leading" constant="32" id="nqm-hI-CD4"/>
+                                                <constraint firstItem="iR3-gY-Fac" firstAttribute="leading" secondItem="SkY-Hh-OEH" secondAttribute="leading" id="or3-0p-MwX"/>
+                                                <constraint firstItem="kuP-Iv-eQM" firstAttribute="top" secondItem="SkY-Hh-OEH" secondAttribute="top" constant="16" id="res-aC-UJX"/>
+                                                <constraint firstAttribute="bottom" secondItem="iR3-gY-Fac" secondAttribute="bottom" id="t7f-dt-oMj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="averageRating" destination="jTy-U9-wtE" id="IcL-AF-TmQ"/>
+                                            <outlet property="chillRating" destination="MMI-Ax-xcO" id="fwe-8M-aGc"/>
+                                            <outlet property="coursesLabel" destination="27X-Pr-x3N" id="5RN-OS-aS8"/>
+                                            <outlet property="difficultyRating" destination="TEu-cL-5hl" id="xbI-P8-jjO"/>
+                                            <outlet property="humorRating" destination="mOJ-42-95M" id="TE9-6Y-qPE"/>
+                                            <outlet property="loundnessRating" destination="rr8-lS-cY3" id="pPT-ba-cuX"/>
+                                            <outlet property="meritsRating" destination="lyA-uz-ME2" id="kE0-PC-eRg"/>
+                                            <outlet property="nameLabel" destination="kuP-Iv-eQM" id="col-PY-WHo"/>
+                                            <outlet property="ratingsView" destination="iR3-gY-Fac" id="UMu-aR-yuE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="commentCell" id="kGt-1O-zBu" customClass="CommentCell" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="511" width="414" height="52.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kGt-1O-zBu" id="HRh-UA-AyE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komentarz..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpR-jf-xdp">
+                                                    <rect key="frame" x="20" y="16" width="96.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xpR-jf-xdp" secondAttribute="trailing" constant="20" symbolic="YES" id="6gV-Ph-xtH"/>
+                                                <constraint firstItem="xpR-jf-xdp" firstAttribute="top" secondItem="HRh-UA-AyE" secondAttribute="top" constant="16" id="Pxd-cc-KKA"/>
+                                                <constraint firstItem="xpR-jf-xdp" firstAttribute="leading" secondItem="HRh-UA-AyE" secondAttribute="leading" constant="20" id="dqs-VE-3P2"/>
+                                                <constraint firstAttribute="bottom" secondItem="xpR-jf-xdp" secondAttribute="bottom" constant="16" id="hNt-Cz-9eg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="xpR-jf-xdp" id="a0d-6Z-lr9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lcg-4M-feG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oBH-AV-V9A" firstAttribute="top" secondItem="Lcg-4M-feG" secondAttribute="top" id="BeS-ja-hBX"/>
+                            <constraint firstItem="Lcg-4M-feG" firstAttribute="bottom" secondItem="oBH-AV-V9A" secondAttribute="bottom" id="FUc-lX-M5L"/>
+                            <constraint firstItem="Lcg-4M-feG" firstAttribute="trailing" secondItem="oBH-AV-V9A" secondAttribute="trailing" id="N7S-eT-4dO"/>
+                            <constraint firstItem="oBH-AV-V9A" firstAttribute="leading" secondItem="Lcg-4M-feG" secondAttribute="leading" id="tyW-q7-7gf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bIa-2O-OvO"/>
+                    <connections>
+                        <outlet property="detailsTable" destination="oBH-AV-V9A" id="Ylz-CU-hNn"/>
+                        <segue destination="jVy-iM-pA4" kind="show" identifier="voteOnTeacher" id="9Vj-Cd-uy9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYF-LC-8Gh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-275" y="767"/>
+        </scene>
+        <!--Vote On Teacher View Controller-->
+        <scene sceneID="ICF-2I-RCM">
+            <objects>
+                <viewController id="jVy-iM-pA4" customClass="VoteOnTeacherViewController" customModule="TeacherVoter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDF-t1-41O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imie nazwisko" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WT-bK-mJl">
+                                <rect key="frame" x="32" y="104" width="350" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-Jy-wsr" userLabel="Metrits">
+                                <rect key="frame" x="32" y="146.5" width="350" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Merytoryka prowadzenia zajęć" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-Jb-LgL">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-BU-uc9" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="183" y="0.0" width="167" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="qyY-uR-SVr"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kF8-Pg-zlW" userLabel="Chill">
+                                <rect key="frame" x="32" y="210.5" width="350" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Wyluzowanie" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWM-WL-n92">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-hM-00o" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="183" y="0.0" width="167" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="5bW-ML-rbz"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pOR-xJ-9Yc" userLabel="Loudness">
+                                <rect key="frame" x="32" y="274.5" width="350" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Donośność głosu" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3f-FG-RXB">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxy-Ez-2Tj" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="183" y="0.0" width="167" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dkv-Ny-U1x"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-o8-LKe" userLabel="Difficulty">
+                                <rect key="frame" x="32" y="338.5" width="350" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Poziom trudności zadania" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhe-gw-UmJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-6L-nNp" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="183" y="0.0" width="167" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="gyN-n5-8zs"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xWw-Tm-Ied" userLabel="Humor">
+                                <rect key="frame" x="32" y="402.5" width="350" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Poczucie humoru" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sl-2b-nEu">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-qO-TEB" customClass="StarRatingView" customModule="TeacherVoter" customModuleProvider="target">
+                                        <rect key="frame" x="183" y="0.0" width="167" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starRoundingRawValue">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="nQ8-sX-U8J"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-VJp">
+                                <rect key="frame" x="32" y="503" width="350" height="343"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komentarz (opcjonalny):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25b-LU-7iz">
+                                <rect key="frame" x="32" y="466.5" width="195.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mau-ce-GH0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="25b-LU-7iz" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="1gc-5e-FQo"/>
+                            <constraint firstAttribute="trailing" secondItem="pOR-xJ-9Yc" secondAttribute="trailing" constant="32" id="477-A2-Xbe"/>
+                            <constraint firstItem="9WT-bK-mJl" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="Cku-F9-yGc"/>
+                            <constraint firstItem="9kz-Jy-wsr" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="DRM-F6-Ws3"/>
+                            <constraint firstItem="25b-LU-7iz" firstAttribute="top" secondItem="xWw-Tm-Ied" secondAttribute="bottom" id="F7c-sM-ZLI"/>
+                            <constraint firstItem="Mau-ce-GH0" firstAttribute="bottom" secondItem="U8K-8M-VJp" secondAttribute="bottom" constant="16" id="IB5-Um-u4F"/>
+                            <constraint firstItem="xWw-Tm-Ied" firstAttribute="top" secondItem="ghX-o8-LKe" secondAttribute="bottom" id="Kx4-SQ-Mqd"/>
+                            <constraint firstItem="pOR-xJ-9Yc" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="LOu-WM-QBX"/>
+                            <constraint firstAttribute="trailing" secondItem="xWw-Tm-Ied" secondAttribute="trailing" constant="32" id="Mh5-pS-wyV"/>
+                            <constraint firstItem="kF8-Pg-zlW" firstAttribute="top" secondItem="9kz-Jy-wsr" secondAttribute="bottom" id="P86-uN-3lv"/>
+                            <constraint firstItem="ghX-o8-LKe" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="Pcx-uM-iCx"/>
+                            <constraint firstItem="9kz-Jy-wsr" firstAttribute="top" secondItem="9WT-bK-mJl" secondAttribute="bottom" constant="16" id="Q8z-hw-S8x"/>
+                            <constraint firstItem="U8K-8M-VJp" firstAttribute="top" secondItem="25b-LU-7iz" secondAttribute="bottom" constant="16" id="S6J-e7-xNh"/>
+                            <constraint firstItem="pOR-xJ-9Yc" firstAttribute="top" secondItem="kF8-Pg-zlW" secondAttribute="bottom" id="bUg-ic-DFk"/>
+                            <constraint firstItem="ghX-o8-LKe" firstAttribute="top" secondItem="pOR-xJ-9Yc" secondAttribute="bottom" id="chI-IW-t7V"/>
+                            <constraint firstAttribute="trailing" secondItem="ghX-o8-LKe" secondAttribute="trailing" constant="32" id="fXL-QG-FEf"/>
+                            <constraint firstItem="U8K-8M-VJp" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="fen-71-UOh"/>
+                            <constraint firstItem="Mau-ce-GH0" firstAttribute="trailing" secondItem="9kz-Jy-wsr" secondAttribute="trailing" constant="32" id="hDf-jh-kfh"/>
+                            <constraint firstItem="kF8-Pg-zlW" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="plF-T7-yLC"/>
+                            <constraint firstItem="9WT-bK-mJl" firstAttribute="top" secondItem="Mau-ce-GH0" secondAttribute="top" constant="16" id="qPy-3c-KiK"/>
+                            <constraint firstItem="Mau-ce-GH0" firstAttribute="trailing" secondItem="U8K-8M-VJp" secondAttribute="trailing" constant="32" id="qav-U7-NRV"/>
+                            <constraint firstItem="Mau-ce-GH0" firstAttribute="trailing" secondItem="9WT-bK-mJl" secondAttribute="trailing" constant="32" id="r7S-SL-Byo"/>
+                            <constraint firstAttribute="trailing" secondItem="kF8-Pg-zlW" secondAttribute="trailing" constant="32" id="sTW-Dj-ffM"/>
+                            <constraint firstItem="Mau-ce-GH0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="25b-LU-7iz" secondAttribute="trailing" symbolic="YES" id="syE-tR-Fte"/>
+                            <constraint firstItem="xWw-Tm-Ied" firstAttribute="leading" secondItem="Mau-ce-GH0" secondAttribute="leading" constant="32" id="tJu-0c-yWM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="msr-e5-rEU"/>
+                    <connections>
+                        <outlet property="chillRating" destination="TBS-hM-00o" id="vOq-ZF-aCK"/>
+                        <outlet property="commentTextView" destination="U8K-8M-VJp" id="5Ko-or-U90"/>
+                        <outlet property="difficultyRating" destination="VAl-6L-nNp" id="rKk-Ea-Jge"/>
+                        <outlet property="humorRating" destination="xHg-qO-TEB" id="yii-sm-AYU"/>
+                        <outlet property="loudnessRating" destination="nxy-Ez-2Tj" id="wpg-sD-tQ9"/>
+                        <outlet property="meritsRating" destination="TVK-BU-uc9" id="7d7-Xd-x68"/>
+                        <outlet property="nameLabel" destination="9WT-bK-mJl" id="hfy-eC-EBz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9A-UI-rhr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
